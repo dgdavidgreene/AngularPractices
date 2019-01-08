@@ -1,0 +1,37 @@
+
+
+Use absolute locations by updating tsconfig
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+   ...
+
+    "baseUrl": "src",
+    "paths": {
+      "@app/*": ["app/*"]
+    }
+  }
+}
+
+// import { HeaderComponent } from '@app/components/header/header.component';
+https://scotch.io/tutorials/reference-angular-imports-absolutely-for-easier-development
+
+
+"paths": {
+      "@services/*": ["app/path/to/services/*"],
+      "@components/*": ["app/somewhere/deeply/nested/*"],
+      "@environments/*": ["environments/*"]
+    }
+https://angularfirebase.com/lessons/shorten-typescript-imports-in-an-angular-project/    
+
+
+Index.ts
+Typescript module resolution picks up index.ts file from folder name if it is there and try to import packages.
+In this file, we can export all folder specific components and modules. For example, consider index.ts file inside products folder:
+export * from './product/product.component';
+export * from './products-details/products-details.component';
+export * from './products-overview/products-overview.component';
+export * from './products.module';
+
+
+
